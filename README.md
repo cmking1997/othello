@@ -44,8 +44,12 @@ The "buttonWithModal.tsx" comes from a personal project I've been working on rec
 The query params allow for different gamemodes to be added and easily checked from the game screen.
 As well the way some functions are implemented allows for that to also be checked easier. For example the "GetWhoseTurn" has a seperate function since it is something dependent on what game mode you are playing.
 
+Later on testing the application on my laptop to ensure it works on a 1080p screen I changed the grid sizes to fit that size screen better as it is the most common use case.
+
 ## Some Ideas I didn't Fully Realize
 
 The AI could be improved, as it is currently fairly simplistic. I'm also not really a fan of having a while(true) loop anywhere in the code but for this implementation I think it's fine for now, would be the first thing I'd update going forward.
 
 Originally my extra game mode idea was to have each player go twice in a row ... but that causes the game to end instantly. There are workarounds to this, like only after turn 1 do players go twice. Or start the grid with a 4x4 rather than 2x2 pre-filled section. Though I have not implemented those at this time.
+
+Another upgrade callout is that the sizing could be dynamic based on screen size or a user selection.
