@@ -1,36 +1,51 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
-
-First, run the development server:
+## Launching the Project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## My Thoughts and Process
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+I started out by spinning up the base Next.js application, as it is a tool I'm quite familiar with.
 
-## Learn More
+From there I built out first a basic main-menu without styling; with a play button, single/multiplayer toggle, and how to button.
 
-To learn more about Next.js, take a look at the following resources:
+As well as a game screen that consisted of the grid but with the grid positions displayed (ie (0,1)) (and a quit button).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next I built out the game screen itself.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+First setting up the color balls and the logic to click a square of the board to set its value.
 
-## Deploy on Vercel
+Next was the logic of where a ball could be placed, using the getFlippablePieces code which I obtained using AI assistance.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+When using AI I tend to not copy paste but rather type out the code myself. I find it is like writing down what a lecturer says and it helps me understand better what the output actually does.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Up to this point the game was setup only for the multiplayer version and lacked any kind of computer opponent.
+
+I set that up next, since this project isn't focused on the actual algorithm of a well playing AI I wrote one that randomly plays on the available spaces in a very naive way. This is a point of potential improvement in the future.
+
+That logic setup the next phase which was eliminating edge cases.
+
+The main two being, what if a player has no moves and then what if neither player has any moves.
+
+The noValidMoves and gameUncontinuableFailsafe (which maybe needs a shorter name) both acomplish these objectives.
+
+Then I setup the styling of the game screen. Centering everything, adding a title card, and the bottom section containing the buttons and game information.
+
+I moved from there to the main game screen where I centered it and styled the pieces.
+
+The "buttonWithModal.tsx" comes from a personal project I've been working on recently and it was as perfect a solution for the "How to Play" button here as it was in that project. I left it in that form as a potential component for future use, for example adding a credits button or other informational button with modal is easier with it.
+
+The query params allow for different gamemodes to be added and easily checked from the game screen.
+As well the way some functions are implemented allows for that to also be checked easier. For example the "GetWhoseTurn" has a seperate function since it is something dependent on what game mode you are playing.
+
+## Some Ideas I didn't Fully Realize
+
+The AI could be improved, as it is currently fairly simplistic. I'm also not really a fan of having a while(true) loop anywhere in the code but for this implementation I think it's fine for now, would be the first thing I'd update going forward.
+
+Originally my extra game mode idea was to have each player go twice in a row ... but that causes the game to end instantly. There are workarounds to this, like only after turn 1 do players go twice. Or start the grid with a 4x4 rather than 2x2 pre-filled section. Though I have not implemented those at this time.

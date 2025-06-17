@@ -24,3 +24,162 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.mainWrap {
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.backingContainer {
+  background-color: grey;
+  padding: 32px;
+  border-radius: 30px;
+  height: fit-content;
+  align-items: center;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.whiteText {
+  color: white;
+}
+
+.title {
+  color: white;
+  font-size: xx-large;
+  width: fit-content;
+}
+
+.linkButton {
+  color: black;
+  border: 1px solid black;
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: medium;
+  text-align: center;
+}
+
+.quitButton {
+  color: black;
+  border: 1px solid black;
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: white;
+  border-radius: 10px;
+  font-size: medium;
+  text-align: center;
+  height: 55px;
+}
+
+.menuButton {
+  color: black;
+  border: 1px solid black;
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: white;
+  border-radius: 10px;
+  height: 55px;
+}
+
+.gameBackContainer {
+  padding: 64px;
+  border-radius: 30px;
+  height: fit-content;
+  align-items: center;
+}
+
+.whiteCircle {
+  background-color: white;
+}
+
+.blackCircle {
+  background-color: black;
+}
+
+.circleAbs {
+  position: absolute;
+}
+
+.circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.mainGrid {
+  flex-direction: column;
+}
+
+.gridSquare {
+  height: 110px;
+  width: 110px;
+  border: 1px solid black;
+  border-radius: 2px;
+  position: relative;
+  background-color: grey;
+}
+
+/* disabling antd default hover settings */
+.gridSquare:hover {
+  border: 1px solid black !important;
+  background-color: grey !important;
+  cursor: default;
+}
+
+.redDot {
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 45px;
+  right: 45px;
+}
+
+.bottomContainer {
+  background-color: grey;
+  border-radius: 5px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.gameInfoContainer {
+  margin-left: 8px;
+  margin-top: 8px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+}
+
+.pointsContainer {
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.onePoint {
+  align-items: center;
+  justify-content: space-around;
+  width: 150px;
+}
+
+.infoText {
+  font-size: 25px;
+}
+
+.buttonContainer {
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 8px;
+}
