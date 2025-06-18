@@ -52,6 +52,8 @@ Given I felt I still had some time left and thinking it should be easy with the 
 
 Lastly I setup esLint as I realized I didn't have the extension on my VSCode and corrected the errors it called out.
 
+I tested that it works on both Windows and Linux (have not tested macOS). As well as 1440p & 1080p screen sizes at default browser settings for Edge, Firefox, Chrome, and Opera.
+
 ## Some Ideas I didn't Fully Realize
 
 The AI could be improved, as it is currently fairly simplistic. I'm also not really a fan of having a while(true) loop anywhere in the code but for this implementation I think it's fine for now, would be the first thing I'd update going forward.
