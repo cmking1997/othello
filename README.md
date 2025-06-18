@@ -46,6 +46,8 @@ As well the way some functions are implemented allows for that to also be checke
 
 Later on testing the application on my laptop to ensure it works on a 1080p screen I changed the grid sizes to fit that size screen better as it is the most common use case.
 
+Finally I slept on it, to get a fresh mind and be away from the code a bit, then re-reviewed the code to ensure it still made sense to me and I didn't notice anything I'd want to change at this time.
+
 ## Some Ideas I didn't Fully Realize
 
 The AI could be improved, as it is currently fairly simplistic. I'm also not really a fan of having a while(true) loop anywhere in the code but for this implementation I think it's fine for now, would be the first thing I'd update going forward.
