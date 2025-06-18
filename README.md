@@ -33,7 +33,7 @@ That logic setup the next phase which was eliminating edge cases.
 
 The main two being, what if a player has no moves and then what if neither player has any moves.
 
-The noValidMoves and gameUncontinuableFailsafe (which maybe needs a shorter name) both acomplish these objectives.
+The noValidMoves and gameUncontinuableFailsafe (which maybe needs a shorter name) both accomplish these objectives.
 
 Then I setup the styling of the game screen. Centering everything, adding a title card, and the bottom section containing the buttons and game information.
 
@@ -42,7 +42,7 @@ I moved from there to the main game screen where I centered it and styled the pi
 The "buttonWithModal.tsx" comes from a personal project I've been working on recently and it was as perfect a solution for the "How to Play" button here as it was in that project. I left it in that form as a potential component for future use, for example adding a credits button or other informational button with modal is easier with it.
 
 The query params allow for different gamemodes to be added and easily checked from the game screen.
-As well the way some functions are implemented allows for that to also be checked easier. For example the "GetWhoseTurn" has a seperate function since it is something dependent on what game mode you are playing.
+As well the way some functions are implemented allows for that to also be checked easier. For example the "GetWhoseTurn" has a separate function since it is something dependent on what game mode you are playing.
 
 Later on testing the application on my laptop to ensure it works on a 1080p screen I changed the grid sizes to fit that size screen better as it is the most common use case.
 
