@@ -12,6 +12,9 @@ export function HowToPlayButton() {
           <p>Flip all the discs within the border</p>
           <p>Black Moves First</p>
           <p>If no move is possible on your turn it is skipped.</p>
+          <p>____________________________________________________________</p>
+          <p>Alternate Game Modes</p>
+          <p>Two By : Players will take two turns in a row.</p>
         </>
       }
     ></ButtonWithModal>

@@ -48,10 +48,10 @@ Later on testing the application on my laptop to ensure it works on a 1080p scre
 
 Finally I slept on it, to get a fresh mind and be away from the code a bit, then re-reviewed the code to ensure it still made sense to me and I didn't notice anything I'd want to change at this time.
 
+Given I felt I still had some time left and thinking it should be easy with the way I set it up I decided to implement the extra game mode idea. Specifically the 4x4 grid initialization method to get the 2 turn variant working.
+
 ## Some Ideas I didn't Fully Realize
 
 The AI could be improved, as it is currently fairly simplistic. I'm also not really a fan of having a while(true) loop anywhere in the code but for this implementation I think it's fine for now, would be the first thing I'd update going forward.
-
-Originally my extra game mode idea was to have each player go twice in a row ... but that causes the game to end instantly. There are workarounds to this, like only after turn 1 do players go twice. Or start the grid with a 4x4 rather than 2x2 pre-filled section. Though I have not implemented those at this time.
 
 Another upgrade callout is that the sizing could be dynamic based on screen size or a user selection.

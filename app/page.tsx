@@ -23,6 +23,14 @@ export default function TopMenu() {
           }}}
           className="linkButton"
         >Play Classic</Link>
+        <Link href={{
+          pathname: '/game',
+          query: {
+            type: 'twoby',
+            players: players,
+          }}}
+          className="linkButton"
+        >Play TwoBy</Link>
         <Radio.Group
           onChange={updatePlayers}
           value={players}

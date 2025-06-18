@@ -6,6 +6,7 @@ import { HowToPlayButton } from "../howToPlayButton";
 
 enum gameModeEnum {
   classic,
+  twoby
 }
 
 export default function Game() {
@@ -21,15 +22,44 @@ export default function Game() {
     const params = new URL(document.location.toString()).searchParams;
     const gameModeQueryParam = params.get("type");
     setPlayers(params.get('players') as unknown as number); //'as unknown' required for tsLint otherwise ('string | null' =!> number)
-    if (gameModeQueryParam === "classic") {
+    if (gameModeQueryParam === "twoby") {
+      setGameMode(gameModeEnum.twoby);
+      initGridTwoBy();
+    } else {
       setGameMode(gameModeEnum.classic);
+      initGridClassic();
     }
-    const gridClone = grid;
+  }, []);
+
+  const initGridClassic = () => {
+    const gridClone = [...grid];
     gridClone[3][3] = 0;
     gridClone[3][4] = 1;
     gridClone[4][3] = 1;
     gridClone[4][4] = 0;
-  }, []);
+    setGrid(gridClone);
+  }
+
+  const initGridTwoBy = () => {
+    const gridClone = [...grid];
+    gridClone[2][2] = 0;
+    gridClone[2][3] = 1;
+    gridClone[2][4] = 0;
+    gridClone[2][5] = 1;
+    gridClone[3][2] = 1;
+    gridClone[3][3] = 0;
+    gridClone[3][4] = 1;
+    gridClone[3][5] = 0;
+    gridClone[4][2] = 0;
+    gridClone[4][3] = 1;
+    gridClone[4][4] = 0;
+    gridClone[4][5] = 1;
+    gridClone[5][2] = 1;
+    gridClone[5][3] = 0;
+    gridClone[5][4] = 1;
+    gridClone[5][5] = 0;
+    setGrid(gridClone);
+  }
   
   useEffect(() => {
     if (gameNotOver()) {
@@ -89,6 +119,8 @@ export default function Game() {
   const getWhoseTurn = () => {
     if (gameMode === gameModeEnum.classic) {
       return getWhoseTurnClassic();
+    } else if (gameMode === gameModeEnum.twoby) {
+      return getWhoseTurnTwoBy();
     }
   }
 
@@ -114,13 +146,22 @@ export default function Game() {
       return "whiteCircle";
     }
   }
+
+  const getWhoseTurnTwoBy = () => {
+    const value = turnCount % 4;
+    if (value === 0 || value === 1) {
+      return "blackCircle";
+    } else {
+      return "whiteCircle";
+    }
+  }
   
   const cellSelected = (rowIndex: number, columnIndex: number, override: boolean = false) => {
     if ((!override && inputDebounce) || !gameNotOver()) return;
     const flippablePieces = getFlippablePieces(rowIndex, columnIndex);
     if (flippablePieces.length > 0) {
       const valueToChangeTo = getWhoseTurn() === 'whiteCircle' ? 0 : 1;
-      const gridClone = grid;
+      const gridClone = [...grid];
       gridClone[rowIndex][columnIndex] = valueToChangeTo;
       for (const [r, c] of flippablePieces) {
         gridClone[r][c] = valueToChangeTo;
