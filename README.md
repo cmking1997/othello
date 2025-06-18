@@ -46,9 +46,11 @@ As well the way some functions are implemented allows for that to also be checke
 
 Later on testing the application on my laptop to ensure it works on a 1080p screen I changed the grid sizes to fit that size screen better as it is the most common use case.
 
-Finally I slept on it, to get a fresh mind and be away from the code a bit, then re-reviewed the code to ensure it still made sense to me and I didn't notice anything I'd want to change at this time.
+Next I slept on it, to get a fresh mind and be away from the code a bit, then re-reviewed the code to ensure it still made sense to me and I didn't notice anything I'd want to change at this time.
 
 Given I felt I still had some time left and thinking it should be easy with the way I set it up I decided to implement the extra game mode idea. Specifically the 4x4 grid initialization method to get the 2 turn variant working.
+
+Lastly I setup esLint as I realized I didn't have the extension on my VSCode and corrected the errors it called out.
 
 ## Some Ideas I didn't Fully Realize
 

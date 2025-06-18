@@ -90,7 +90,7 @@ export default function Game() {
 
   const noValidMoves = () => {
     const allEmptySquares = getAllEmptySquares();
-    for (let [r, c] of allEmptySquares) {
+    for (const [r, c] of allEmptySquares) {
       if (getFlippablePieces(r, c).length > 0) {
         return false;
       }
@@ -220,7 +220,7 @@ export default function Game() {
             return <Flex key={`row_${rowIndex}`}>
               {
                 row.map((value, columnIndex) => {
-                  let classToUse = `${value == 0 ? 'whiteCircle' : 'blackCircle'} circle circleAbs`;
+                  const classToUse = `${value == 0 ? 'whiteCircle' : 'blackCircle'} circle circleAbs`;
                   return(
                     <Button key={`position_${rowIndex}_${columnIndex}`} className="gridSquare" onClick={() => cellSelected(rowIndex, columnIndex)}>
                       {/* AntD Flex requires a child to render */}
